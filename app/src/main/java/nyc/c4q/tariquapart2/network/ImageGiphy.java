@@ -5,6 +5,7 @@ package nyc.c4q.tariquapart2.network;
  */
 
 public class ImageGiphy {
+
     private String url;
 
     public String getUrl() {

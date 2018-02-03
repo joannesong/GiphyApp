@@ -2,6 +2,7 @@ package nyc.c4q.tariquapart2;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.util.List;
@@ -36,12 +37,14 @@ public class MainActivity extends AppCompatActivity {
                giphyList = response.body().getData();
 
                 Toast.makeText(getApplicationContext(),"yes", Toast.LENGTH_LONG).show();
+                Log.d("Response", "yes!");
 
             }
 
             @Override
             public void onFailure(Call<Data> call, Throwable t) {
                 Toast.makeText(getApplicationContext(),"no", Toast.LENGTH_LONG).show();
+                Log.d("Response", "no!");
             }
         });
     }
