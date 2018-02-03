@@ -18,6 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
     private Retrofit retrofit;
     private List<ImageGiphy> giphyList;
+    private GiphyDatabaseHelper giphyDatabaseHelper = new GiphyDatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
