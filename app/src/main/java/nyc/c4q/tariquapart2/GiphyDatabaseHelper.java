@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import nyc.c4q.tariquapart2.network.Data;
+
 import static nl.qbusict.cupboard.CupboardFactory.cupboard;
 
 /**
@@ -23,16 +25,17 @@ public class GiphyDatabaseHelper extends SQLiteOpenHelper{
         return instance;
     }
 
-    private GiphyDatabaseHelper(Context context) {
+    public GiphyDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     static {
-        cupboard().register(Doggie.class);
+        cupboard().register(Data.class);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
         cupboard().withDatabase(db).createTables();
     }
 
