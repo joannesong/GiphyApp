@@ -31,7 +31,7 @@ public class GiphyDatabaseHelper extends SQLiteOpenHelper{
     }
 
     static {
-        cupboard().register(Data.class);
+        cupboard().register(ImageGiphy.class);
     }
 
     @Override
