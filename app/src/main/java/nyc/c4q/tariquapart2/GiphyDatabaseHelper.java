@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import nyc.c4q.tariquapart2.network.Data;
+import nyc.c4q.tariquapart2.network.ImageGiphy;
 
 import static nl.qbusict.cupboard.CupboardFactory.cupboard;
 
@@ -37,10 +38,16 @@ public class GiphyDatabaseHelper extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
 
         cupboard().withDatabase(db).createTables();
+
     }
 
     @Override
     public void onUpgrade (SQLiteDatabase db, int oldVersion, int newVersion) {
         cupboard().withDatabase(db).upgradeTables();
+    }
+
+
+    public void insertDoggie(SQLiteDatabase db, ImageGiphy giphy){
+        cupboard().withDatabase(db).put(giphy);
     }
 }
